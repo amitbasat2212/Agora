@@ -25,8 +25,8 @@ export  function ItemForm() {
   const [item,setItem]=useState({
     price:0,
     product:"",
-    categorey:"",
-    description:""
+    categorey:"",   
+    paurched:false
   })
 
   const setItemInputesHandle = (evt)=>{
@@ -90,17 +90,7 @@ export  function ItemForm() {
               id="categorey"
               autoComplete="current-categorey"
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="description"
-              label="description"
-              onChange={setItemInputesHandle}
-              type="description"
-              id="description"
-             
-            />
+            
             
             <Button             
               fullWidth

@@ -18,13 +18,14 @@ export  function AgoraStore() {
 
     return (
     <TableContainer  component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
+      <Table sx={{ minWidth: 900 }} aria-label="customized table">
+      <TableHead>
           <TableRow>
-            <StyledTableCell  align="left">item price</StyledTableCell>
-            <StyledTableCell align="left">item product name&nbsp;</StyledTableCell>
-            <StyledTableCell align="left">item categorey&nbsp;</StyledTableCell>           
-            <StyledTableCell align="left">item description&nbsp;</StyledTableCell>
+            <StyledTableCell  align="left">product name</StyledTableCell>
+            <StyledTableCell align="left">price&nbsp;</StyledTableCell>
+            <StyledTableCell align="left">category&nbsp;</StyledTableCell>           
+            <StyledTableCell align="left">paurches&nbsp;</StyledTableCell>           
+            <StyledTableCell align="left">to purches&nbsp;</StyledTableCell>
          
           </TableRow>
         </TableHead>

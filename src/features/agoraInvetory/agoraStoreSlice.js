@@ -13,6 +13,9 @@ export const agoraStoreSlice = createSlice({
             state.itemsStore.push(action.payload)
             console.log(state) 
        },
+    //    purchedAnItem=()=>{
+
+    //    }
 
     }
 
