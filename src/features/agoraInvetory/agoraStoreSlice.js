@@ -1,5 +1,5 @@
 import {  createSlice } from '@reduxjs/toolkit';
-import {Item} from './storeItemObject'
+
 
 const initialState = {
     itemsStore: []
@@ -9,9 +9,8 @@ export const agoraStoreSlice = createSlice({
     name: 'agoraStore',
     initialState,
     reducers: {
-       addItemToStore:(state,action)=>{
-            console.log(action.payload)
-            state.items.push(action.payload) 
+       addItemToStore:(state,action)=>{           
+            state.itemsStore.push(action.payload) 
        },
 
     }
