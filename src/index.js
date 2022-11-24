@@ -11,7 +11,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <Provider invetory={invetory}>
+    <Provider store={invetory}>
       <App />
     </Provider>
   </React.StrictMode>
