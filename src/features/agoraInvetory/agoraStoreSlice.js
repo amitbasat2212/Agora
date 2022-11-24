@@ -10,7 +10,8 @@ export const agoraStoreSlice = createSlice({
     initialState,
     reducers: {
        addItemToStore:(state,action)=>{           
-            state.itemsStore.push(action.payload) 
+            state.itemsStore.push(action.payload)
+            console.log(state) 
        },
 
     }

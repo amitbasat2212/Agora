@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import {
     addItemToStore,    
 } from './agoraStoreSlice';
@@ -56,7 +56,7 @@ export  function ItemForm() {
           <Typography component="h1" variant="h5">
             Add Item
           </Typography>
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Box  noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -102,8 +102,7 @@ export  function ItemForm() {
              
             />
             
-            <Button
-              type="submit"
+            <Button             
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

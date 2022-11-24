@@ -11,25 +11,26 @@ import React, { useState, useEffect } from 'react'
 import {    
     selectItems
 } from './agoraStoreSlice';
+import StoreItem from './agoraStoreItem';
 
 export  function AgoraStore() {
     const Storeitems = useSelector(selectItems);  
-        
+
     return (
     <TableContainer  component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell  align="left">transaction vendor</StyledTableCell>
-            <StyledTableCell align="left">transaction amount&nbsp;</StyledTableCell>
-            <StyledTableCell align="left">transaction category&nbsp;</StyledTableCell>           
-            <StyledTableCell align="left">delete transaction&nbsp;</StyledTableCell>
+            <StyledTableCell  align="left">item price</StyledTableCell>
+            <StyledTableCell align="left">item product name&nbsp;</StyledTableCell>
+            <StyledTableCell align="left">item categorey&nbsp;</StyledTableCell>           
+            <StyledTableCell align="left">item description&nbsp;</StyledTableCell>
          
           </TableRow>
         </TableHead>
         <TableBody>
           {Storeitems.map((st) => (
-            <div>hi</div>
+            <StoreItem storeItem={st}/>
           ))}
         </TableBody>
       </Table>
