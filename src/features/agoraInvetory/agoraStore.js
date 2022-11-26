@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux';
 
 import {    
     selectItems,
-    purchedAnItem
+    purchedAnItem,
+    editThePrice
 } from './agoraStoreSlice';
 
 
@@ -22,16 +23,15 @@ export  function AgoraStore() {
     const purchedItem = (IdItem)=>{
         dispatch(purchedAnItem(IdItem))
     }
+    const editItem=(IdItem)=>{
+        dispatch(editThePrice(IdItem))
+    }
     return (
-        <Grid container spacing={2}>
-        <Grid item xs={2} md={3}>
+        <Grid container spacing={2} sx={{mt:4,ml:2}}>        
         {Storeitems.map((st) => (
-            <StoreItemCard storeItem={st} purchedItem={purchedItem}/>
-          ))}
-            
-        </Grid>
+            <StoreItemCard  storeItem={st} editItem={editItem} purchedItem={purchedItem}/>
+          ))}       
        
-        
       </Grid>
   );
 }

@@ -5,6 +5,13 @@ const initialState = {
     itemsStore: []
 };
 
+const ChangeTheStoreList=(state,idItem,keyToChange,value)=>{
+    const theNewItemStore=[...state.itemsStore]
+    const index = theNewItemStore.findIndex((item)=>item.id==idItem)
+    theNewItemStore[index][keyToChange]=value;
+    state.itemsStore=theNewItemStore
+}
+
 export const agoraStoreSlice = createSlice({
     name: 'agoraStore',
     initialState,
@@ -14,11 +21,12 @@ export const agoraStoreSlice = createSlice({
             
        },
        purchedAnItem:(state,action)=>{ 
-            const theNewItemStore=[...state.itemsStore]
-            const index = theNewItemStore.findIndex((item)=>item.id==action.payload)
-            theNewItemStore[index].paurched=true;
-            state.itemsStore=theNewItemStore
-            
+          ChangeTheStoreList(state,action.payload,"paurched",true)
+                        
+       },
+       editThePrice:(state,action)=>{ 
+        ChangeTheStoreList(state,action.payload.id,"price",action.payload.price)       
+        
        }
 
     }
@@ -26,7 +34,7 @@ export const agoraStoreSlice = createSlice({
 })
 
     
-export const { addItemToStore,purchedAnItem} = agoraStoreSlice.actions;
+export const { addItemToStore,purchedAnItem,editThePrice} = agoraStoreSlice.actions;
 
 export const selectItems = (state) => state.StoreItems.itemsStore;
 
