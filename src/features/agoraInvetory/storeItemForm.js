@@ -27,7 +27,9 @@ export  function ItemForm() {
     price:0,
     product:"",
     categorey:"",   
-    paurched:false
+    paurched:false,
+    discription:"",
+    image:""
   })
 
   const setItemInputesHandle = (evt)=>{
@@ -74,11 +76,33 @@ export  function ItemForm() {
               margin="normal"
               required
               fullWidth
+              id="image"
+              label="image "
+              name="image"
+              autoComplete="image"
+              onChange={setItemInputesHandle}
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
               id="price"
               label="price "
               name="price"
               onChange={setItemInputesHandle}
               autoComplete="price"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="discription"
+              label="discription "
+              name="discription"
+              onChange={setItemInputesHandle}
+              autoComplete="discription"
               autoFocus
             />
             <TextField
