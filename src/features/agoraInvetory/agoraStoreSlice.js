@@ -11,18 +11,22 @@ export const agoraStoreSlice = createSlice({
     reducers: {
        addItemToStore:(state,action)=>{           
             state.itemsStore.push(action.payload)
-            console.log(state) 
+            
        },
-    //    purchedAnItem=()=>{
-
-    //    }
+       purchedAnItem:(state,action)=>{ 
+            const theNewItemStore=[...state.itemsStore]
+            const index = theNewItemStore.findIndex((item)=>item.id==action.payload)
+            theNewItemStore[index].paurched=true;
+            state.itemsStore=theNewItemStore
+            
+       }
 
     }
 
 })
 
     
-export const { addItemToStore} = agoraStoreSlice.actions;
+export const { addItemToStore,purchedAnItem} = agoraStoreSlice.actions;
 
 export const selectItems = (state) => state.StoreItems.itemsStore;
 

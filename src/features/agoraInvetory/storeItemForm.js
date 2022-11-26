@@ -23,6 +23,7 @@ const theme = createTheme();
 export  function ItemForm() {
   const dispatch = useDispatch();   
   const [item,setItem]=useState({
+    id:0,
     price:0,
     product:"",
     categorey:"",   
@@ -37,6 +38,7 @@ export  function ItemForm() {
   }
 
   const handleSubmit=()=>{    
+    item.id = Math.random().toString(16).slice(2)+item.product
     dispatch(addItemToStore(item))
   }
 
