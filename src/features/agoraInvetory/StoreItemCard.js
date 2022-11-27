@@ -12,12 +12,20 @@ import Typography from '@mui/material/Typography';
 
 
 export default function StoreItemCard(props) {
-  const [price,setPrice]=React.useState()  
+  const [price,setPrice]=React.useState(props.storeItem.price)  
+  const [edit,setEditMode]=React.useState(false)
   const purchedItem=()=>{
     props.purchedItem(props.storeItem.id)
   }
   const editItem=()=>{
-    props.editItem(props.storeItem.id,price)
+    if(edit){
+        setEditMode(false)
+        props.editItem({"id":props.storeItem.id , "price":price})
+    }else{
+        setEditMode(true)
+
+    }    
+    
   }      
 
   const handleChange=(evt)=>{           
@@ -44,22 +52,23 @@ export default function StoreItemCard(props) {
             { "category: "+ props.storeItem.categorey} 
         </Typography>
         
-        {props.storeItem.editMode?
+        {edit?
         <TextField
           required
           onChange={handleChange}
           id="outlined-required"          
           sx={{border:"black", mt:2,backgroundColor:'white'}}
-          defaultValue={props.storeItem.price}
+          defaultValue={price}
         />:
         <Typography variant="body2"  sx={{mt:2,color:"white"}} color="text.secondary">
-            { "price: "+ props.storeItem.price} 
+            { "price: "+ price} 
         </Typography>}
         
         <Typography variant="body2" sx={{mt:2,mb:2,color:"white"}} color="text.secondary">
             {"discription: " +props.storeItem.discription} 
         </Typography>
-        {props.storeItem.paurched?<Typography sx={{color:"white"}} variant="body2" color="text.secondary">
+        {props.storeItem.paurched?
+        <Typography sx={{color:"white"}} variant="body2" color="text.secondary">
           {props.storeItem.product } is alredy purches 
         </Typography>:
         <CardContent>    
