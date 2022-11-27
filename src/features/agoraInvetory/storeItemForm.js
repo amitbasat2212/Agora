@@ -40,9 +40,18 @@ export  function ItemForm() {
     })
   }
 
-  const handleSubmit=()=>{    
-    item.id = Math.random().toString(16).slice(2)+item.product
-    dispatch(addItemToStore(item))
+  const handleSubmit=()=>{
+    if(item.price=="" || item.product=="" || item.discription=="" || item.categorey=="" ){
+        alert("you have to fill all the fileds ")
+    }    
+    else if(isNaN(item.price)){
+        alert("price is not right ")
+    }else{
+        item.id = Math.random().toString(16).slice(2)+item.product
+        dispatch(addItemToStore(item))
+        alert("the item was added ")
+    }
+    
   }
 
   return (
