@@ -3,6 +3,7 @@ import {  createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     itemsStore: []
+    
 };
 
 const ChangeTheStoreList=(state,idItem,keyToChange,value)=>{
@@ -27,16 +28,19 @@ export const agoraStoreSlice = createSlice({
        editThePrice:(state,action)=>{ 
         ChangeTheStoreList(state,action.payload.id,"price",action.payload.price)       
         
-       }
+       },
+       
 
     }
 
 })
 
     
-export const { addItemToStore,purchedAnItem,editThePrice} = agoraStoreSlice.actions;
+export const { addItemToStore,purchedAnItem,editThePrice,setTheStorage} = agoraStoreSlice.actions;
 
 export const selectItems = (state) => state.StoreItems.itemsStore;
+
+
 
 
 export default agoraStoreSlice.reducer;

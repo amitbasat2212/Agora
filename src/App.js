@@ -4,6 +4,7 @@ import  {AgoraStore } from './features/agoraInvetory/agoraStore';
 import  {NavBar } from './features/NavBar';
 import './App.css';
 import { BrowserRouter as Router, Route,Link} from 'react-router-dom'
+import Tracker from './features/agoraInvetory/Tracker';
 
 
 
@@ -16,11 +17,11 @@ function App() {
           <NavBar/>                  
       </div> 
       <div>     
-      <Route path="/operations" exact render={() => <ItemForm />} />   
-      <Route path="/store" exact render={() => <AgoraStore />} />   
-        
+      <Route path="/Invetory" exact render={() => <ItemForm />} />   
+      <Route path="/store" exact render={() => <AgoraStore />} />         
 
-      </div>       
+      </div>  
+      <Tracker/>     
     </div>
     </Router>
   );

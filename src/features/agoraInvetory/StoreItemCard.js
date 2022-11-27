@@ -40,7 +40,6 @@ export default function StoreItemCard(props) {
         title={props.storeItem.product}
         
       />
-
       <CardMedia
         component="img"
         height="194"

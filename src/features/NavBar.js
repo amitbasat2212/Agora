@@ -11,7 +11,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import NavBarItem from './buttons/NavBarItem';
 import NavBarButton from './buttons/NavBarButton';
 
-const pages = ['store', 'operations', 'breakdown'];
+const pages = ['store', 'Invetory'];    
 
 
 export  function NavBar() {
